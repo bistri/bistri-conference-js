@@ -935,8 +935,9 @@ bc.signaling.unbind ( event );
 
 - **error**: triggered when a global error occurred.
     - arguments:
-        - error `JSON`
-        ```json
+        - error `Object`
+        
+        ```js
         {
             "code": "xxx", // error code
             "text": "..."  // error reason
@@ -945,8 +946,9 @@ bc.signaling.unbind ( event );
 - **connected**: triggered when client is connected to the signaling server.
     - event related to: `connect()`
     - arguments:
-        - session `JSON`
-        ```json
+        - session `Object`
+
+        ```js
         {
             "id": "rfpWEk" // user session id
         }
@@ -956,8 +958,9 @@ bc.signaling.unbind ( event );
 - **connectionResumed**: triggered when client reconnect after a disconnection.
 - **connectionError**: triggered when connection to signaling server is lost.
     - arguments:
-        - error `JSON`
-        ```json
+        - error `Object`
+
+        ```js
         {
             "code": "xxx",  // error code
             "reason": "..." // error reason
@@ -966,14 +969,15 @@ bc.signaling.unbind ( event );
 - **joinedRoom**: triggered when room has been joined
     - event related to: `joinRoom()`
     - arguments:
-        - data `JSON`
-        ```json
+        - data `Object`
+
+        ```js
         {
 	        "room": "aUpS45g7J0w",   // room name
 	        "members":[              // array of users already present in the room
                 { 
-                    id: "aVlxUi",    // remote peer id
-                    name: "Jane Doe" // remote user display name
+                    "id": "aVlxUi",    // remote peer id
+                    "name": "Jane Doe" // remote user display name
                 },
 	        ],
         }
@@ -981,8 +985,9 @@ bc.signaling.unbind ( event );
 - **joinRoomError**: triggered when an error occurred while joining room
     - event related to: `joinRoom()`
     - arguments:
-        - error `JSON`
-        ```json
+        - error `Object`
+
+        ```js
         {
             "code": "xxx",  // error code
             "reason": "..." // error reason
@@ -991,8 +996,9 @@ bc.signaling.unbind ( event );
 - **quittedRoom**: triggered when room has been left
     - event related to: `quitRoom()`
     - arguments:
-        - room `JSON`
-        ```json
+        - room `Object`
+
+        ```js
         {
             "room": "aUpS45g7J0w" // room name
         }
@@ -1000,8 +1006,9 @@ bc.signaling.unbind ( event );
 - **quitRoomError**: triggered when an error occurred while quitting room
     - event related to: `quitRoom()`
     - arguments:
-        - error `JSON`
-        ```json
+        - error `Object`
+
+        ```js
         {
             "code": "xxx",  // error code
             "reason": "..." // error reason
@@ -1009,8 +1016,9 @@ bc.signaling.unbind ( event );
         ```
 - **peerJoinedRoom**: triggered when a new participant join the room
     - arguments:
-        - peer `JSON`
-        ```json
+        - peer `Object`
+
+        ```js
         {
             "room": "aUpS45g7J0w", // room name
             "name": "John Doe",    // remote peer name
@@ -1019,8 +1027,9 @@ bc.signaling.unbind ( event );
         ```
 - **peerQuittedRoom**: triggered when a new participant leave the room
     - arguments:
-        - peer `JSON`
-        ```json
+        - peer `Object`
+
+        ```js
         {
             "room": "aUpS45g7J0w", // room name
             "pid": "rfpWEk"        // remote peer id
@@ -1029,13 +1038,14 @@ bc.signaling.unbind ( event );
 - **customSignal**: triggered when a custom signal is received
     - event related to: `sendCustomSignal()`
     - arguments:
-        - data `JSON`
+        - data `Object`
 
 - **incomingRequest**: triggered when a remote user invite you to join a room
     - event related to: `call()`, `openDataChannel()`
     - arguments:
-        - request `JSON`
-        ```json
+        - request `Object`
+
+        ```js
         {
             "room": "aUpS45g7J0w", // room name
             "pid": "rfpWEk",       // remote peer id
@@ -1045,17 +1055,18 @@ bc.signaling.unbind ( event );
 - **incomingCall**: triggered if a new call or data channel request is received and `autoAcceptCall` option has been set to `false`
     - event related to: `call()`, `openDataChannel()`
     - arguments:
-        - call `JSON`
-        ```json
+        - call `Object`
+
+        ```js
         {
-            type: "media",           // call type (media, datachannel)
-            pid: "rfpWEk",           // remote peer id
-            room:  "aUpS45g7J0w",    // room name
-            options: {…},        // call options
-            client: {…},          // resquester's browser info
-            sendonly: false,         // bidirectional call info
-            accept: function (){…} // function to accept call
-            reject: function (){…} // function to reject call
+            "type": "media",           // call type (media, datachannel)
+            "pid": "rfpWEk",           // remote peer id
+            "room":  "aUpS45g7J0w",    // room name
+            "options": {…},        // call options
+            "client": {…},          // resquester's browser info
+            "sendonly": false,         // bidirectional call info
+            "accept": function (){…}, // function to accept call
+            "reject": function (){…} // function to reject call
 		
 		}
         ```
@@ -1073,7 +1084,8 @@ bc.signaling.unbind ( event );
         - message `String`: error message
         - trace `Array`: peerConnection log
         - client `Object`: remote browser info
-        ```json
+
+        ```js
         {
             "name": "chrome",        // browser name
             "version": "83",         // browser version
@@ -1091,8 +1103,9 @@ bc.signaling.unbind ( event );
 - **presence**: triggered when a presence status is received
     - event related to: `getPresence()`
     - arguments:
-        - presence `JSON` : remote peer id
-        ```json
+        - presence `Object`: remote peer id
+
+        ```js
         {
             "id": "rfpWEk",      // peer id
             "presence": "online" // presence status
@@ -1166,7 +1179,8 @@ bc.streams.unbind ( event );
 - **streamStatsUpdated**: triggered when connection statistics have been updated
     - arguments:
         - stats `Object`: 
-        ```json
+
+        ```js
         {
             "send": {…},       // sent data stats
             "recv": {…},       // received data stats
@@ -1214,7 +1228,8 @@ bc.channels.unbind ( event );
     - event related to: `openDataChannel()`
     - arguments:
         - channel `DataChannel`: data channel object
-        ```json
+
+        ```js
         {
             "label": "chat",                  // data channel label
             "send": function ( message ) {…}, // send message 
@@ -1229,7 +1244,8 @@ bc.channels.unbind ( event );
     - event related to: `openDataChannel()`
     - arguments:
         - channel `DataChannel`: data channel object
-        ```json
+
+        ```js
         {
             "label": "chat",                  // data channel label
             "send": function ( message ) {…}, // send message 
@@ -1274,12 +1290,13 @@ bc.files.unbind ( event );
         - channel `DataChannel`: data channel object
         - pid `String`: recipient id
         - file `Object`: file info
+
         ```js
-            { 
-                id: "iu798d4n",      // file transfert id
-                name: "my_file.pdf", // file name
-                size: "55.05 KB"     // file size
-            }
+        { 
+            "id": "iu798d4n",      // file transfert id
+            "name": "my_file.pdf", // file name
+            "size": "55.05 KB"     // file size
+        }
         ```
     
 - **newFileTransfer**: triggered when a file transfert request is received on the recipient side
@@ -1288,15 +1305,17 @@ bc.files.unbind ( event );
         - channel `DataChannel`: data channel object
         - pid `String`: sender id
         - file `Object`: file info
+
         ```js
-            { 
-                id: "iu798d4n",      // file transfert id
-                name: "my_file.pdf", // file name
-                size: "55.05 KB"     // file size
-            }
+        { 
+            "id": "iu798d4n",      // file transfert id
+            "name": "my_file.pdf", // file name
+            "size": "55.05 KB"     // file size
+        }
         ```
         - answer `Object`: answer to file transfert request
-        ```json
+
+        ```js
         {
             "ok": function () {…},    // accept file transfert request
             "cancel": function () {…} // reject file transfert request
@@ -1326,6 +1345,7 @@ bc.files.unbind ( event );
     - arguments:
         - id: `String`, file transfert uid
         - file `Object`: file info
+
         ```js
             { 
                 id: "iu798d4n",      // file transfert id
