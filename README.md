@@ -77,7 +77,7 @@ bc.init( {
 
 ---
 
-### set
+### set ( options )
 
 Update Bistri Conference options after init.
 
@@ -936,7 +936,7 @@ bc.signaling.unbind ( event );
 - **error**: triggered when a global error occurred.
     - arguments:
         - error `Object`
-        
+
         ```js
         {
             "code": "xxx", // error code
