@@ -602,7 +602,7 @@ bc.sendFile ( "user-1", "myConferenceRoom", "file://..." );
 Send a customized signal to a conference participant.
 
 ```js
-bc.sendFile ( "user-1", "myConferenceRoom", { action: "wizz" } );
+bc.sendCustomSignal ( "user-1", "myConferenceRoom", { action: "wizz" } );
 ```
 
 **arguments**
