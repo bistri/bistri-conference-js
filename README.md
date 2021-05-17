@@ -14,7 +14,7 @@ Audio and Video calls made easy using Bistri Conference JS library and Bistri Si
 **Include the library**
 
   ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bistri/bistri-conference-js/dist/bistri.conference-3.4.5.js">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bistri/bistri-conference-js/dist/bistri.conference-3.5.1.js">
   ```
 
 ---
@@ -26,7 +26,7 @@ Audio and Video calls made easy using Bistri Conference JS library and Bistri Si
 Actual Bistri Conference JS version
 
 ```js
-bc.version // 3.4.5
+bc.version // 3.5.1
 ```
 
 
