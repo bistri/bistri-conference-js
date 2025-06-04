@@ -14,7 +14,7 @@ Audio and Video calls made easy using Bistri Conference JS library and Bistri Si
 **Include the library**
 
   ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bistri/bistri-conference-js/dist/bistri.conference-3.5.9.js">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bistri/bistri-conference-js/dist/bistri.conference-3.5.16.js">
   ```
 
 ---
@@ -26,7 +26,7 @@ Audio and Video calls made easy using Bistri Conference JS library and Bistri Si
 Actual Bistri Conference JS version
 
 ```js
-bc.version // 3.5.9
+bc.version // 3.5.16
 ```
 
 
@@ -1182,11 +1182,12 @@ bc.streams.unbind ( event );
 
         ```js
         {
-            "send": {…},       // sent data stats
-            "recv": {…},       // received data stats
-            "transport": {…},  // transport info
-            "candidates": {…}, // ICE candidates info
-            "client": {…}      // remote browser info
+            "send": {…},            // sent data stats
+            "recv": {…},            // received data stats
+            "transport": {…},       // transport info
+            "candidates": {…},      // ICE candidates info
+            "client": {…}           // remote browser info
+            "cpuPressure": "…"    // cpu stress level (nominal, fair, serious, critical)
         }
         ```
         - pid `String`: remote peer id
