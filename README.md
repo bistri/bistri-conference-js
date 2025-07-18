@@ -26,7 +26,7 @@ Audio and Video calls made easy using Bistri Conference JS library and Bistri Si
 Actual Bistri Conference JS version
 
 ```js
-bc.version // 3.5.16
+bc.version // 3.5.18
 ```
 
 
