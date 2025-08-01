@@ -14,7 +14,7 @@ Audio and Video calls made easy using Bistri Conference JS library and Bistri Si
 **Include the library**
 
   ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bistri/bistri-conference-js/dist/bistri.conference-3.5.18.js">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bistri/bistri-conference-js/dist/bistri.conference-3.5.19.js">
   ```
 
 ---
@@ -313,12 +313,11 @@ bc.attachStream ( stream, document.body, { mirror: true } );
 Refresh stream rendering after it had been updated.
 
 ```js
-bc.reattachStream ( stream, document.body, { mirror: true } );
+bc.reattachStream ( stream, { mirror: true } );
 ```
 
 **arguments**
 - stream: `MediaStream`, stream to render
-- node: `DOM node`, could be a video/audio player or a container
 - options
     - mirror: `Boolean`, flip video vertically, like in a mirror (default: `false`)
     - controls: `Boolean`, display audio/video controls (default: `false`)
